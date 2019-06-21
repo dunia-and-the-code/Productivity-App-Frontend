@@ -1,26 +1,164 @@
-/* body {
-    background-color: white;
-    font-family: 'Teko', sans-serif;
+body {
+    background-color: rgb(255, 253, 253);
+    background-image: url("../images/bench-accounting-49909-unsplash.jpg");
+    background-size: contain;
+    background-position: center;
   }
-  
+
+button {
+  border-radius: 5px;
+  background-color: #fcd0b7;
+  color: white;
+  border-color: #fcd0b7;
+  padding: 4px;
+}
+
   h1 {
-    color: hotpink;
+    color: #fcd0b7;
     text-align: center;
+    font-family: 'Chathura';
+    font-weight: bolder;
+    font-size: 80px;
+    line-height: 0px;
+    padding-top: 50px;
+    padding-bottom: 20px;
+  }
+
+  h3 {
+    color: #fcd0b7;
+    font-family: 'Chathura';
+    font-size: 25px
+  }
+
+  p {
+    color: rgb(110, 110, 110);
+    font-size: 25px;
+    font-family: 'Chathura'
   }
   
   ul {
-    color: black;
-    font-family: 'Julius Sans One', sans-serif;
-    font-size: 20px;
+    color: rgb(110, 110, 110);
+    font-size: 25px;
+    font-family: 'Chathura'
   }
 
-  #checkbox {
-    top: 0;
-    left: 0;
-    height: 25px;
-    width: 25px;
-    background-color: e;
-  } */
+  li {
+    list-style-type: none;
+    color: rgb(110, 110, 110);
+    font-size: 25px;
+    font-family: 'Chathura';
+    background-color: #fcd0b7;
+    object-position: center
+  }
+
+  #session_time {
+    list-style-type: none;
+    color: rgb(110, 110, 110);
+    font-size: 25px;
+    font-family: 'Chathura'
+  }
+
+  #break_time {
+    list-style-type: none;
+    color: rgb(110, 110, 110);
+    font-size: 25px;
+    font-family: 'Chathura'
+  }
+  
+  .checkbox {
+    background-color: #fcd0b7;
+  } 
+
+#date_quotes_container_parent {
+  display: flex;
+  justify-content: center;
+}
+
+ #date_quotes_container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  width: 44%;
+ }
+
+ #date_time_container {
+  font-family: 'Chathura';
+  font-size: 80px;
+  font-weight: bolder;
+  text-align: center;
+  letter-spacing: 0.5px;
+  color: rgb(110, 110, 110);
+  line-height: 52px;
+  padding: 10px;
+ }
+
+#quoteContent {
+  font-family: 'Chathura';
+  font-size: 40px;
+  font-weight: bolder;
+  text-align: center;
+  letter-spacing: 0.5px;
+  color: rgb(110, 110, 110);
+  line-height: 0.5px;
+  padding: 10px;
+}
+
+#quoteAuthor {
+  font-family: 'Chathura';
+  font-size: 40px;
+  font-weight: lighter;
+  text-align: right;
+  
+  letter-spacing: 0.5px;
+  color: rgb(110, 110, 110);
+  line-height: 0.5px;
+  padding: 10px;
+}
+
+#widgets_container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-content: center;
+  justify-content: space-around;
+  padding: 50px;
+}
+
+#to_do_container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  /* width: 44%;  */
+  background-color: aquamarine;
+} 
+
+/* #form_container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  width: 44%; */
+/* } 
+
+#pomodoro_container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  width: 44%; 
+ }
+
+#journal_container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  width: 44%; */ 
+  /* background-color: blue; */
+/* } */ 
+
 
 /* font-family: 'Julius Sans One', sans-serif;
 font-family: 'Secular One', sans-serif;
@@ -29,4 +167,4 @@ font-family: 'Seaweed Script', cursive;
 font-family: 'Major Mono Display', monospace;
 font-family: 'Zilla Slab Highlight', cursive;
 font-family: 'Dawning of a New Day', cursive;
-font-family: 'Mrs Saint Delafield', cursive; */
+font-family: 'Mrs Saint Delafield', cursive;

@@ -1,33 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-	<meta charset="UTF-8">
-	<title>Document</title>
+    <meta charset="UTF-8">
+    <title>Document</title>
     <link rel="stylesheet" href="./index.css">
-    <h1>NoXuses</h1>
+    <link href='https://fonts.googleapis.com/css?family=Anton' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Chathura' rel='stylesheet'>
+    <h1>NO EXCUSES</h1>
 </head>
+
 <body>
-    <div id="date_time_container">
-        <time id="date-time"></time>
-    </div>
-    <div id="quotes_container">
+    <div id="date_quotes_container_parent">
+    <div id='date_quotes_container'>
+        <div id="date_time_container">
+            <time id="date-time"></time>
+        </div>
+        <div id="quotes_container">
         <!-- daily quotes -->
+        </div>
     </div>
+    </div>
+    <div id="widgets_container">
+    <div id="to_do_container">
     <div id="to_do_card">
+        <h3>To Do</h3>
         <ul id="to_do_list">
-        <!-- To do list-->
+            <!-- To do list-->
         </ul>
-        <div>
+        <button id="add_task_btn">Add new task</button>
+    </div>
+</div>
+        <div hidden id="form_container">
             <form id="to_do_form">
-                <p>Create task</p>
+                <h3>Create task</h3>
                 <input name="description" id="description">
                 <button id="to_do_button">Submit</button>
             </form>
         </div>
+    <div id="pomodoro_container">
+        <h3>Pomodoro Clock</h3>
+        <div id="time_el">
+            <p id="title1">Session Time</p>
+            <div id="session_time"></div>
+            <button id="increase_session_btn">+</button>
+            <button id="decrease_session_btn">-</button>
+            <button id="session_start_btn">Start</button>
+            <!-- <button id="reset_btn">Reset</button> -->
+        </div>
+        <div id="break_el">
+            <p id="title1">Break Time</p>
+            <div id="break_time"></div>
+            <button id="increase_break_btn">+</button>
+            <button id="decrease_break_btn">-</button>
+            <button id="break_start_btn">Start</button>
+        </div>
     </div>
-    <div id="daily_journal">
-       
+    <div id="journal_container">
+        <h3>Daily Journal</h3>
+        <ul id="daily_journal">
+            <!-- journal posts -->
+        </ul>
     </div>
-	<script type="text/javascript" src="./index.js"></script>
+</div>
+</div>
+    <script type="text/javascript" src="./index.js"></script>
 </body>
+
 </html>
