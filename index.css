@@ -27,7 +27,7 @@ button {
   h3 {
     color: #fcd0b7;
     font-family: 'Chathura';
-    font-size: 25px
+    font-size: 25px;
   }
 
   p {
@@ -47,8 +47,7 @@ button {
     color: rgb(110, 110, 110);
     font-size: 25px;
     font-family: 'Chathura';
-    background-color: #fcd0b7;
-    object-position: center
+    position: relative;
   }
 
   #session_time {
@@ -79,7 +78,7 @@ button {
   flex-direction: column;
   justify-content: center;
   align-content: center;
-  width: 44%;
+  /* width: 38%; */
  }
 
  #date_time_container {
@@ -97,11 +96,11 @@ button {
   font-family: 'Chathura';
   font-size: 40px;
   font-weight: bolder;
-  text-align: center;
-  letter-spacing: 0.5px;
-  color: rgb(110, 110, 110);
+  text-align: center; 
+  letter-spacing: 0.5px; 
+   color: rgb(110, 110, 110);
   line-height: 0.5px;
-  padding: 10px;
+  padding: 10px; 
 }
 
 #quoteAuthor {
@@ -126,38 +125,23 @@ button {
 }
 
 #to_do_container {
-  display: flex;
+  /* display: flex; */
   flex-direction: column;
   justify-content: center;
   align-content: center;
-  /* width: 44%;  */
-  background-color: aquamarine;
 } 
 
-/* #form_container{
+#pomodoro_container {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-content: center;
-  width: 44%; */
-/* } 
-
-#pomodoro_container{
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-content: center;
-  width: 44%; 
+  line-height: 30px;
+  
+  /* background-color: rgba(255, 253, 253, 0.5) */
  }
 
-#journal_container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-content: center;
-  width: 44%; */ 
-  /* background-color: blue; */
-/* } */ 
+
 
 
 /* font-family: 'Julius Sans One', sans-serif;
