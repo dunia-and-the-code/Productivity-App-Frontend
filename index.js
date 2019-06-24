@@ -1,11 +1,7 @@
 //Pomodoro clock - excuses alert
 //increment / decrement pomodoro timer
 //Excuses redered in excuses card with timestamps
-//Daily journal rendered with time stamp
-//Daily journal form avaliable once a day
-//Journal posts are editable
-//Journal posts listed with 'Readom more' button
-//'Journal entry' button to toggle submition form
+//Fix back button on journal posts (renders null at fetch)
 //CSS
 
 
@@ -26,8 +22,11 @@ const sessionStartBtn = document.querySelector('#session_start_btn')
 const breakStartBtn = document.querySelector('#break_start_btn')
 const breakTime = document.querySelector('#break_time')
 const journalContainer = document.querySelector('#daily_journal')
+const journalFormContainer = document.querySelector('#journal_form_container')
+const journalFormInput = document.querySelector('#post_description')
 
 toDoFormContainer.style.display = "none"
+journalFormContainer.style.display = "none"
 
 function updateDateTime() {
 
@@ -40,7 +39,7 @@ function updateDateTime() {
     let month = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
     let year = now.getFullYear()
 
-    let fullDateTime = `${hour}:${minutes}<br>${date} ${day[now.getDay() - 1]} ${month[now.getMonth()]} ${year}`
+    let fullDateTime = `${hour}:${minutes}<br>${day[now.getDay()]} ${date} ${month[now.getMonth()]} ${year}`
 
     dateTimetag.innerHTML = fullDateTime
     setTimeout('updateDateTime()', 100)
@@ -65,7 +64,17 @@ function renderQuote(quote) {
     quoteContent.setAttribute('id', 'quoteContent')
     quoteAuthor.setAttribute('id', 'quoteAuthor')
 
-    quoteContent.innerText = `"${quote.contents.quotes[0].quote}"`
+    // let quoteLine = quote.contents.quotes[0].quote
+    // let quoteLineSplit = quoteLine.split(' ')
+    // let quoteLineOne = quoteLineSplit.slice(1,15)
+    // let quoteLineTwo = quoteLineSplit.slice(16,30)
+    // let quoteLineOneString = quoteLineOne.join(' ')
+    // let quoteLineTwoString = quoteLineTwo.join(' ')
+    // let brEl = document.createElement('br')
+    // let quoteLineFull = `"${quoteLineOneString} \n ${quoteLineTwoString}"`
+
+    // quoteContent.innerText = quoteLineFull
+    quoteContent.innerText += quote.contents.quotes[0].quote
     quoteAuthor.innerText += quote.contents.quotes[0].author
 
     quotesContainer.append(quoteContent)
@@ -184,9 +193,9 @@ function setSessionMinutes() {
         breakTime.innerHTML = `${sessionMinutes}:${sessionSeconds}`
         breakTime.setAttribute('id', 'session_time')
 
-    // } else if () {
+        // } else if () {
 
-        
+
 
     } else {
 
@@ -285,12 +294,58 @@ function renderJournalPosts(posts) {
 
     posts.forEach(post => renderJournalPost(post))
 
+    const createPostBtn = document.createElement('button')
+    createPostBtn.setAttribute('id', 'create_post_btn')
+    createPostBtn.innerHTML = 'Create new post'
+    journalContainer.append(createPostBtn)
+
+    createPostBtn.addEventListener('click', () => {
+
+        journalContainer.innerHTML = ''
+        journalFormContainer.style.display = "block"
+        journalContainer.append(journalFormContainer)
+
+    })
 }
 
 
 function renderJournalPost(post) {
 
-    const postEl = document.createElement('li')
+    const parseDate = dateString => new Date(Date.parse(dateString)).toString().slice(0, 15)
+
+    const fullPostEl = document.createElement('li')
+    fullPostEl.setAttribute('id', 'full_post_el')
+    fullPostEl.innerHTML = parseDate(post.created_at)
+
+    journalContainer.append(fullPostEl)
+
+    fullPostEl.addEventListener('click', (e) => {
+
+        journalContainer.innerHTML = ''
+
+        const target = e.target
+        renderFullJournalPost(post)
+
+        const backBtn = document.createElement('button')
+        backBtn.setAttribute('id', 'back_btn')
+        backBtn.innerHTML = 'Back'
+        journalContainer.append(backBtn)
+
+        const createPostBtn = document.querySelector('#create_post_btn')
+
+        backBtn.addEventListener('click', () => {
+            debugger
+            journalContainer.innerHTML = ''
+            getJournalPosts()
+            journalContainer.append(createPostBtn)
+
+        })
+    })
+}
+
+function renderFullJournalPost(post) {
+
+    const postEl = document.createElement('p')
     postEl.setAttribute('id', 'post_el')
     postEl.dataset.id = post.id
     postEl.innerHTML = post.description
@@ -302,7 +357,12 @@ function renderJournalPost(post) {
     postEl.append(editBtn)
     journalContainer.append(postEl)
 
-    editBtn.addEventListener('click', (e) => editPostForm(e, post))
+    editBtn.addEventListener('click', (e) => {
+        
+        editBtn.disabled = true
+
+        editPostForm(e, post)
+    })
 
 }
 

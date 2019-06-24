@@ -10,7 +10,9 @@ button {
   background-color: #fcd0b7;
   color: white;
   border-color: #fcd0b7;
-  padding: 4px;
+  /* padding: 1px; */
+  /* font-family: 'Chathura'; */
+  font-size: 15px;
 }
 
   h1 {
@@ -27,25 +29,25 @@ button {
   h3 {
     color: #fcd0b7;
     font-family: 'Chathura';
-    font-size: 25px;
+    font-size: 30px;
   }
 
   p {
     color: rgb(110, 110, 110);
-    font-size: 25px;
+    font-size: 30px;
     font-family: 'Chathura'
   }
   
   ul {
     color: rgb(110, 110, 110);
-    font-size: 25px;
+    font-size: 30px;
     font-family: 'Chathura'
   }
 
   li {
     list-style-type: none;
     color: rgb(110, 110, 110);
-    font-size: 25px;
+    font-size: 30px;
     font-family: 'Chathura';
     position: relative;
   }
@@ -53,15 +55,18 @@ button {
   #session_time {
     list-style-type: none;
     color: rgb(110, 110, 110);
-    font-size: 25px;
-    font-family: 'Chathura'
+    font-size: 70px;
+    font-family: 'Chathura';
+    /* line-height: 50px; */
+    padding-bottom: 20px;
   }
 
   #break_time {
     list-style-type: none;
     color: rgb(110, 110, 110);
-    font-size: 25px;
-    font-family: 'Chathura'
+    font-size: 70px;
+    font-family: 'Chathura';
+    padding-bottom: 20px;
   }
   
   .checkbox {
@@ -77,7 +82,7 @@ button {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-content: center;
+  /* align-content: center; */
   /* width: 38%; */
  }
 
@@ -101,6 +106,7 @@ button {
    color: rgb(110, 110, 110);
   line-height: 0.5px;
   padding: 10px; 
+  word-break: break-all
 }
 
 #quoteAuthor {
